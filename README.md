@@ -3,8 +3,9 @@ Transpiler un modèle en C : régression linéaire
 
 # Requirements
 
+```sh
   !pip install -r requirements.txt
-
+```
 
 # Usage
 
