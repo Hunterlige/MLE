@@ -2,7 +2,7 @@
 <html data-lt-installed="true"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
 
-<title>temp-163951438871631644</title>
+<title>temp-163952818674182548</title>
 
 <script src="MLE_denis.lusson_fichiers/require.js"></script>
 <script src="MLE_denis.lusson_fichiers/jquery.js"></script>
@@ -13219,7 +13219,7 @@ Email: denis.lusson@epita.fr</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -13235,7 +13235,7 @@ Email: denis.lusson@epita.fr</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1"># Load the diabetes dataset</span>
@@ -13266,7 +13266,7 @@ Email: denis.lusson@epita.fr</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -13283,7 +13283,7 @@ Email: denis.lusson@epita.fr</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">regr</span><span class="p">,</span> <span class="n">f</span><span class="s2">"regr.joblib"</span><span class="p">);</span>
@@ -13296,7 +13296,7 @@ Email: denis.lusson@epita.fr</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">predict</span> <span class="o">=</span> <span class="n">diabetes_X_test</span>
@@ -13332,7 +13332,7 @@ Email: denis.lusson@epita.fr</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">code</span> <span class="o">=</span> <span class="n">f</span><span class="s2">"""</span><span class="se">\</span>
@@ -13340,7 +13340,7 @@ Email: denis.lusson@epita.fr</p>
 <span class="s2">float prediction(float *features, float* thetas)</span>
 <span class="s2">{{</span>
 <span class="s2">    float res = thetas[0];</span>
-<span class="s2">    for (int i = 0; i &lt; {n_thetas}; ++i)</span>
+<span class="s2">    for (int i = 0; i &lt; {len(model.coef_)}; ++i)</span>
 <span class="s2">        res += features[i] * thetas[i + 1];</span>
 <span class="s2">    return res;</span>
 <span class="s2">}}</span>
@@ -13382,7 +13382,7 @@ Email: denis.lusson@epita.fr</p>
 float prediction(float *features, float* thetas)
 {
     float res = thetas[0];
-    for (int i = 0; i &lt; 11; ++i)
+    for (int i = 0; i &lt; 10; ++i)
         res += features[i] * thetas[i + 1];
     return res;
 }
@@ -13429,7 +13429,7 @@ int main(int argc, char *arvgv[])
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">gcc</span> <span class="n">regr</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">O3</span> <span class="o">-</span><span class="n">o</span> <span class="n">regr</span>
@@ -13442,7 +13442,7 @@ int main(int argc, char *arvgv[])
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">'Modèle transpilé :'</span><span class="p">)</span>
@@ -13494,7 +13494,7 @@ int main(int argc, char *arvgv[])
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">)</span>
